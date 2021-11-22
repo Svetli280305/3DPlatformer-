@@ -435,10 +435,11 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 256
-  jumpForce: 300
   maxSpeed: 8
   normalSpeed: 8
   sprintSpeed: 15
+  minJump: 2
+  maxJumpPressure: 30
 --- !u!136 &593045770
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -510,7 +511,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 593045768}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 32.00575, y: 2.45, z: -24.42217}
+  m_LocalPosition: {x: 32.00575, y: 3.1, z: -24.42217}
   m_LocalScale: {x: 1.1423, y: 1.1423, z: 1.1423}
   m_Children:
   - {fileID: 963194228}
@@ -548,7 +549,7 @@ GameObject:
   - component: {fileID: 648018286}
   m_Layer: 8
   m_Name: Ground
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -931,7 +932,7 @@ MonoBehaviour:
   myPlatform: {fileID: 815302786}
   myStartPoint: {fileID: 579035942}
   myEndPoint: {fileID: 183531609}
-  speed: 0.01
+  speed: 0.05
 --- !u!4 &1043938437
 Transform:
   m_ObjectHideFlags: 0
@@ -940,7 +941,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1043938435}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 36.969166, y: 1.09, z: -25.67}
+  m_LocalPosition: {x: 36.969166, y: 1.54, z: -25.67}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 815302786}
@@ -1371,7 +1372,7 @@ MonoBehaviour:
   myPlatform: {fileID: 1294969479}
   myStartPoint: {fileID: 1857063278}
   myEndPoint: {fileID: 1564129663}
-  speed: 0.01
+  speed: 0.05
 --- !u!4 &2095496529
 Transform:
   m_ObjectHideFlags: 0

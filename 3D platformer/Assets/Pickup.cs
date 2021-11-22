@@ -9,7 +9,7 @@ public class Pickup : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         //Add some code here that confers a benefit to the player
-        playerScript.jumpForce += 10;
+        playerScript.maxJumpPressure += 10;
         Destroy(gameObject);
     }
-}
+} 

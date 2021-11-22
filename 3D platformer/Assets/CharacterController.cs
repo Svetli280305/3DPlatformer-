@@ -14,15 +14,15 @@ public class CharacterController : MonoBehaviour
     bool isOnGround;
     public GameObject groundChecker;
     public LayerMask groundLayer;
-    public float jumpForce = 300.0f;
+    //public float jumpForce = 300.0f;
 
     public float maxSpeed;
     public float normalSpeed = 8.0f;
     public float sprintSpeed = 15.0f;
 
     float jumpPressure = 0f;
-    float minJump = 2f;
-    float maxJumpPressure = 10f;
+    public float minJump = 2f;
+    public float maxJumpPressure = 30f;
 
     // Start is called before the first frame update
     void Start()
@@ -82,22 +82,23 @@ public class CharacterController : MonoBehaviour
                     jumpPressure = maxJumpPressure;
                 }
             }
-        }
-        //not holding jump button//
-        else
-        {
-            //jump//
-            if (jumpPressure > 0f)
+            else
             {
-                jumpPressure = jumpPressure + minJump;
-                myRigidbody.velocity = new Vector3(jumpPressure / 10f, jumpPressure, 3f);
-                jumpPressure = 0f;
-                isOnGround = false;
+                //jump//
+                if (jumpPressure > 0f)
+                {
+                    jumpPressure = jumpPressure + minJump;
+                    myRigidbody.velocity = new Vector3(jumpPressure / 10f, jumpPressure, 3f);
+                    jumpPressure = 0f;
+                    isOnGround = false;
+                }
             }
         }
+        //not holding jump button//
+        
     }
 
-    private void OnCollisionEnter(Collider other)
+    private void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.CompareTag("Ground"))
         {
