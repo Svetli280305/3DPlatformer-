@@ -24,9 +24,15 @@ public class CharacterController : MonoBehaviour
     public float minJump = 2f;
     public float maxJumpPressure = 30f;
 
+    Animator myAnim;
+
+    [SerializeField] GameObject playerVisuals;
+
     // Start is called before the first frame update
     void Start()
     {
+        myAnim = GetComponentInChildren<Animator>();
+
         cam = GameObject.Find("Main Camera");
         myRigidbody = GetComponent<Rigidbody>();
         Cursor.lockState = CursorLockMode.Locked;
@@ -38,7 +44,7 @@ public class CharacterController : MonoBehaviour
         //transform.position = transform.position + transform.forward * Input.GetAxis("Vertical") * maxSpeed;
         //transform.position = transform.position + transform.right * Input.GetAxis("Horizontal") * maxSpeed;
 
-        //isOnGround = Physics.CheckSphere(groundChecker.transform.position, 0.1f, groundLayer);
+        isOnGround = Physics.CheckSphere(groundChecker.transform.position, 0.1f, groundLayer);
 
         //if (isOnGround == true && Input.GetKeyDown(KeyCode.Space))
         //{
@@ -59,6 +65,9 @@ public class CharacterController : MonoBehaviour
         camRotation = Mathf.Clamp(camRotation, -40.0f, 40.0f);
         cam.transform.localRotation = Quaternion.Euler(new Vector3(-camRotation, 0.0f, 0.0f));
 
+        myAnim.SetFloat("speed", newVelocity.magnitude);
+        myAnim.SetBool("isOnGround", isOnGround);
+
         if (Input.GetKey(KeyCode.LeftShift))
         {
             maxSpeed = sprintSpeed;
@@ -73,6 +82,7 @@ public class CharacterController : MonoBehaviour
             //holding jump button//
             if (Input.GetButton("Jump"))
             {
+                myAnim.SetTrigger("jumped");
                 if (jumpPressure < maxJumpPressure)
                 {
                     jumpPressure += Time.deltaTime * 10f;
@@ -90,7 +100,6 @@ public class CharacterController : MonoBehaviour
                     jumpPressure = jumpPressure + minJump;
                     myRigidbody.velocity = new Vector3(jumpPressure / 10f, jumpPressure, 3f);
                     jumpPressure = 0f;
-                    isOnGround = false;
                 }
             }
         }
@@ -105,4 +114,10 @@ public class CharacterController : MonoBehaviour
             isOnGround = true;
         }
     }
+
+    //void DoVisuals()
+    //{
+        //Vector3 inputVector = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+        //playerVisuals.transform.LookAt(transform.position + inputVector);
+    //}
 }
