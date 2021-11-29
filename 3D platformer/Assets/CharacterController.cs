@@ -21,8 +21,14 @@ public class CharacterController : MonoBehaviour
     public float sprintSpeed = 15.0f;
 
     float jumpPressure = 0f;
-    public float minJump = 2f;
+    public float minJump = 6f;
     public float maxJumpPressure = 30f;
+
+    public AudioClip jump;
+    public AudioClip backgroundMusic;
+
+    public AudioSource sfxPlayer;
+    public AudioSource musicPlayer;
 
     Animator myAnim;
 
@@ -41,6 +47,9 @@ public class CharacterController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        musicPlayer.clip = backgroundMusic;
+        musicPlayer.loop = true;
+        musicPlayer.Play();
         //transform.position = transform.position + transform.forward * Input.GetAxis("Vertical") * maxSpeed;
         //transform.position = transform.position + transform.right * Input.GetAxis("Horizontal") * maxSpeed;
 
