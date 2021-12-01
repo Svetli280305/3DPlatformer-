@@ -32,6 +32,8 @@ public class CharacterController : MonoBehaviour
 
     Animator myAnim;
 
+    AudioSource myAudioSource;
+
     [SerializeField] GameObject playerVisuals;
 
     // Start is called before the first frame update
@@ -42,6 +44,7 @@ public class CharacterController : MonoBehaviour
         cam = GameObject.Find("Main Camera");
         myRigidbody = GetComponent<Rigidbody>();
         Cursor.lockState = CursorLockMode.Locked;
+        myAudioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -67,6 +70,13 @@ public class CharacterController : MonoBehaviour
 
         myRigidbody.velocity = new Vector3(finalVelocity.x, myRigidbody.velocity.y, finalVelocity.z);
 
+        if ((myRigidbody.velocity.magnitude > 1.0f) && (myAudioSource.isPlaying == false) && (isOnGround == true))
+        {
+            myAudioSource.volume = Random.Range(0.8f, 1.0f);
+            myAudioSource.pitch = Random.Range(0.8f, 1.0f);
+            myAudioSource.Play();
+        }
+
         rotation = rotation + Input.GetAxis("Mouse X") * rotationSpeed;
         transform.rotation = Quaternion.Euler(new Vector3(0.0f, rotation, 0.0f));
 
@@ -91,7 +101,6 @@ public class CharacterController : MonoBehaviour
             //holding jump button//
             if (Input.GetButton("Jump"))
             {
-                myAnim.SetTrigger("jumped");
                 if (jumpPressure < maxJumpPressure)
                 {
                     jumpPressure += Time.deltaTime * 10f;
@@ -109,6 +118,9 @@ public class CharacterController : MonoBehaviour
                     jumpPressure = jumpPressure + minJump;
                     myRigidbody.velocity = new Vector3(jumpPressure / 10f, jumpPressure, 3f);
                     jumpPressure = 0f;
+                    sfxPlayer.clip = jump;
+                    sfxPlayer.Play();
+                    myAnim.SetTrigger("jumped");
                 }
             }
         }

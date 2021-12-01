@@ -683,9 +683,9 @@ MonoBehaviour:
   sprintSpeed: 15
   minJump: 2
   maxJumpPressure: 30
-  jump: {fileID: 0}
+  jump: {fileID: 8300000, guid: 869086ba67794a443a1770ee15ab64bc, type: 3}
   backgroundMusic: {fileID: 8300000, guid: ab3d64d2b2d550b4faeabfbcef93a770, type: 3}
-  sfxPlayer: {fileID: 0}
+  sfxPlayer: {fileID: 593045771}
   musicPlayer: {fileID: 593045771}
   playerVisuals: {fileID: 1859977230}
 --- !u!136 &593045770
@@ -712,7 +712,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 869086ba67794a443a1770ee15ab64bc, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
