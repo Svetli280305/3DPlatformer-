@@ -1,13 +1,13 @@
 while (1)
 {	
-	if (`filetest -r "C:/3DPLAT~1/3DPLAT~1/Temp/CommandPipe"`)
+	if (`filetest -r "C:/Users/SYOTOV~1/3DPLAT~1/3DPLAT~1/Temp/CommandPipe"`)
 	{
 		$exportNormals = 0;
 		$exportTangents = 0;
 		$bakeCommand = "";
 	
 		// Parse settings
-		$waitpipe = `fopen "C:/3DPLAT~1/3DPLAT~1/Temp/CommandPipe" "r"`;
+		$waitpipe = `fopen "C:/Users/SYOTOV~1/3DPLAT~1/3DPLAT~1/Temp/CommandPipe" "r"`;
 		$filename = `fgetline $waitpipe`;
 		$fbxFilename = `fgetline $waitpipe`;
 		
@@ -144,9 +144,9 @@ while (1)
 			else
 				print "Could not open Maya file.";
 
-			sysFile -delete "C:/3DPLAT~1/3DPLAT~1/Temp/CommandPipe";
+			sysFile -delete "C:/Users/SYOTOV~1/3DPLAT~1/3DPLAT~1/Temp/CommandPipe";
 
-			$donepipe = `fopen "C:/3DPLAT~1/3DPLAT~1/Temp/SyncPipe" "w"`;
+			$donepipe = `fopen "C:/Users/SYOTOV~1/3DPLAT~1/3DPLAT~1/Temp/SyncPipe" "w"`;
 			fwrite $donepipe "Done";
 			fclose $donepipe;
 			print "Finished maya loading and fbx conversion \n";

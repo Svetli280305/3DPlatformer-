@@ -48,7 +48,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 83
+  controlID: 17
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -390,14 +390,14 @@ MonoBehaviour:
   m_LastFolders:
   - Assets
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: C:\3DPlatformerSV\3D platformer
+  m_LastProjectPath: C:\Users\syotov2021\3DPlatformerSV\3D platformer
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 1e4d0000
-    m_LastClickedID: 19742
-    m_ExpandedIDs: 000000001e4d000000ca9a3bffffff7f
+    m_SelectedIDs: f24d0000
+    m_LastClickedID: 19954
+    m_ExpandedIDs: 00000000f24d000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -425,7 +425,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000001e4d0000
+    m_ExpandedIDs: 00000000f24d0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -553,9 +553,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
-      m_LastClickedID: 0
-      m_ExpandedIDs: 24fbffff
+      m_SelectedIDs: 104d0000
+      m_LastClickedID: 19728
+      m_ExpandedIDs: 18beffff30faffffa44c0000e24c0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -804,9 +804,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 29.52838, y: 19.286297, z: -29.991983}
+    m_Target: {x: 32.050106, y: 3.2144213, z: -24.445507}
     speed: 2
-    m_Value: {x: 29.52838, y: 19.286297, z: -29.991983}
+    m_Value: {x: 32.050106, y: 3.2144213, z: -24.445507}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -853,13 +853,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.29465345, y: -0.68093705, z: 0.5710032, w: -0.35139218}
+    m_Target: {x: 0.10629575, y: 0.24206394, z: -0.02667771, w: 0.9640879}
     speed: 2
-    m_Value: {x: -0.29326826, y: -0.682314, z: 0.57041687, w: -0.3508077}
+    m_Value: {x: 0.104806215, y: 0.24354117, z: -0.026470844, w: 0.9638479}
   m_Size:
-    m_Target: 0.76018834
+    m_Target: 1.8866427
     speed: 2
-    m_Value: 0.79600877
+    m_Value: 1.8866428
   m_Ortho:
     m_Target: 0
     speed: 2
