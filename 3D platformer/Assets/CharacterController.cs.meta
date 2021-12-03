@@ -3,7 +3,13 @@ guid: 7087019130cc4b148b86fcb8ad52d4c1
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - groundChecker: {instanceID: 0}
+  - jump: {fileID: 8300000, guid: b13337d6a043bc542b0f312aa5652933, type: 3}
+  - backgroundMusic: {fileID: 8300000, guid: ab3d64d2b2d550b4faeabfbcef93a770, type: 3}
+  - sfxPlayer: {instanceID: 0}
+  - musicPlayer: {instanceID: 0}
+  - playerVisuals: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

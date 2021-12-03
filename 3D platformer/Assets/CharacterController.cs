@@ -29,6 +29,7 @@ public class CharacterController : MonoBehaviour
 
     public AudioSource sfxPlayer;
     public AudioSource musicPlayer;
+    public AudioSource stepPlayer;
 
     Animator myAnim;
 
@@ -45,14 +46,16 @@ public class CharacterController : MonoBehaviour
         myRigidbody = GetComponent<Rigidbody>();
         Cursor.lockState = CursorLockMode.Locked;
         myAudioSource = GetComponent<AudioSource>();
+        musicPlayer.clip = backgroundMusic;
+        musicPlayer.Play();
     }
 
     // Update is called once per frame
     void Update()
     {
-        musicPlayer.clip = backgroundMusic;
+
         musicPlayer.loop = true;
-        musicPlayer.Play();
+
         //transform.position = transform.position + transform.forward * Input.GetAxis("Vertical") * maxSpeed;
         //transform.position = transform.position + transform.right * Input.GetAxis("Horizontal") * maxSpeed;
 
