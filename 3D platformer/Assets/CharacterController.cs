@@ -21,8 +21,8 @@ public class CharacterController : MonoBehaviour
     public float sprintSpeed = 15.0f;
 
     float jumpPressure = 0f;
-    public float minJump = 6f;
-    public float maxJumpPressure = 30f;
+    public float minJump = 2f;
+    public float maxJumpPressure = 10f;
 
     public AudioClip jump;
     public AudioClip backgroundMusic;
